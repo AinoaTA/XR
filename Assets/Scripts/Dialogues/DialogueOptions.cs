@@ -16,7 +16,6 @@ namespace Dialogue
 
             [SerializeField] private string _sequence;
             [SerializeField] private Dialogue _nextConver;
-
         }
     }
 }

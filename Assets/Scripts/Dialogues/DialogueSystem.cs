@@ -17,7 +17,6 @@ namespace Dialogue
         private bool _stopped;
         private IEnumerator _routine;
 
-        //private Queue<Dialogue> _dialoguesQueue = new();
         private void Awake()
         {
             TryGetComponent(out _audioSource);
@@ -43,8 +42,6 @@ namespace Dialogue
             if (_dialogue != null)
             {
                 if (d.Conver.Priority <= _dialogue.Conver.Priority) return;
-                //else if (d.Conver.Priority == _dialogue.Conver.Priority)
-                //    _dialoguesQueue.Enqueue(d);
             }
 
             _dialogue = d;
@@ -60,12 +57,21 @@ namespace Dialogue
             _indicator.StopIndicator();
         }
 
+        public void StopDialogue()
+        {
+            _indicator.StopIndicator();
+            _dialogue = null;
+        }
+
         private IEnumerator WriteRoutine()
         {
+            _stopped = false; 
+
             _dialogueContext.Enabled(true);
             _dialogueContext.Write(_dialogue.Conver.Sentence);
             float time = 6;
             float t = 0;
+
             //check if conver has voice to play it
             if (_dialogue.Conver.Voice != null)
             {
@@ -81,21 +87,17 @@ namespace Dialogue
                 yield return new WaitWhile(() => _stopped);
             }
 
+            var nextDialogue = _dialogue.Conver.NextDialogue;
+            _dialogue = null;
             //check if there is next conver or close
-            if (_dialogue.Conver.NextDialogue != null)
-                StartDialogue(_dialogue.Conver.NextDialogue);
+            if (nextDialogue != null)
+            { 
+                StartDialogue(nextDialogue);
+            }
             else
             {
-                //if (_dialoguesQueue.Count != 0) 
-                //{
-                //    _dialogue = _dialoguesQueue.Dequeue();
-                //    StartDialogue(_dialogue);
-                //    yield break;
-                //}
-
                 _indicator.StopIndicator();
                 _dialogueContext.Enabled(false);
-                _dialogue = null;
             }
         }
     }

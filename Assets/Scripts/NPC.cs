@@ -13,6 +13,8 @@ namespace NPC
         private void Start()
         {
             _canInteract = true;
+
+            _interact?.Invoke();
         }
 
         private void OnTriggerEnter(Collider other)

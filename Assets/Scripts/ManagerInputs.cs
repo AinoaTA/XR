@@ -3,10 +3,13 @@ using UnityEngine;
 
 namespace Inputs
 {
-    public class PlayerInputs : MonoBehaviour
+    public class ManagerInputs : MonoBehaviour
     {
         public delegate void DelegateOnInteract();
         public static DelegateOnInteract OnInteraction;
+
+        public delegate void DelegateOnMove(Vector3 dir);
+        public static DelegateOnMove OnMovement;
 
         public void Interaction(InputAction.CallbackContext ctx)
         {
@@ -24,6 +27,11 @@ namespace Inputs
                 case InputActionPhase.Canceled:
                     break; 
             }
+        }
+
+        public void Movement(InputAction.CallbackContext ctx) 
+        {
+            OnMovement?.Invoke(ctx.ReadValue<Vector2>());
         }
     }
 }

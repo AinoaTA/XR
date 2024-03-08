@@ -9,12 +9,12 @@ namespace NPC
         [SerializeField] protected UnityEvent _interactDialogue;
         private void OnEnable()
         {
-            Inputs.PlayerInputs.OnInteraction += Interact;
+            Inputs.ManagerInputs.OnInteraction += Interact;
         }
 
         private void OnDisable()
         {
-            Inputs.PlayerInputs.OnInteraction -= Interact;
+            Inputs.ManagerInputs.OnInteraction -= Interact;
         }
 
         public void Interact()

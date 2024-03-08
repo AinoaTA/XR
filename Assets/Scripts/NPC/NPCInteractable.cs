@@ -19,6 +19,7 @@ namespace NPC
 
         public void Interact()
         {
+            Debug.Log("Interacting!");
             if (_isPlayer)
                 _interactDialogue?.Invoke();
         }

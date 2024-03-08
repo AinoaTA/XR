@@ -9,6 +9,7 @@ namespace Dialogue
         [Header("References")]
         [SerializeField] private DialogueContext _dialogueContext;
         [SerializeField] private Dialogue _dialogue;
+        [SerializeField] private TalkIndicator _indicator;
 
         private AudioSource _audioSource;
 
@@ -30,6 +31,7 @@ namespace Dialogue
         public void StartDialogue(Dialogue d)
         {
             _dialogue = d;
+            _indicator.StartIndicator();
 
             if (_routine != null) StopCoroutine(_routine);
             StartCoroutine(_routine = WriteRoutine());
@@ -38,6 +40,7 @@ namespace Dialogue
         public void PauseDialogue()
         {
             _stopped = true;
+            _indicator.StopIndicator();
         }
         private IEnumerator WriteRoutine()
         {
@@ -48,8 +51,7 @@ namespace Dialogue
             {
                 _audioSource.clip = _dialogue.Conver.Voice;
                 _audioSource.Play();
-                time = _audioSource.clip.length;
-                Debug.Log(_audioSource.isPlaying);
+                time = _audioSource.clip.length; 
             }
 
             while (t < time)
@@ -61,7 +63,10 @@ namespace Dialogue
             if (_dialogue.Conver.NextDialogue != null)
                 StartDialogue(_dialogue.Conver.NextDialogue);
             else
-                _dialogueContext.Clear(); 
+            {
+                _indicator.StopIndicator();
+                _dialogueContext.Enabled(false);
+            }
         }
     }
 }

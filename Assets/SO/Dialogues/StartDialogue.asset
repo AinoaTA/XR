@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfaa9949f0a66eb44aab6b68f86cc5e9, type: 3}
+  m_Name: StartDialogue
+  m_EditorClassIdentifier: 
+  _dialogues:
+    _sentence: "Hola! Esper\xE1bamos tu visita.. D\xE9jame que te explique un poco."
+    _voice: {fileID: 0}
+    _nextDialogue: {fileID: 0}

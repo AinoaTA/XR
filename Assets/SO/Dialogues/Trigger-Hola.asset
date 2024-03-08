@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfaa9949f0a66eb44aab6b68f86cc5e9, type: 3}
-  m_Name: StartDialogue
+  m_Name: Trigger-Hola
   m_EditorClassIdentifier: 
   _dialogues:
-    _sentence: "Hola! Esper\xE1bamos tu visita.. D\xE9jame que te explique un poco."
-    _priority: 1
-    _voice: {fileID: 8300000, guid: fb39b28063d431b4383568e6a36d1dd6, type: 3}
-    _nextDialogue: {fileID: 11400000, guid: 8b8907f6dd575004bb8b31b0771dbe21, type: 2}
+    _sentence: Hola.
+    _priority: 0
+    _voice: {fileID: 0}
+    _nextDialogue: {fileID: 0}

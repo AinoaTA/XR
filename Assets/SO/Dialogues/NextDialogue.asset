@@ -15,5 +15,6 @@ MonoBehaviour:
   _dialogues:
     _sentence: "Estas ruinas son del a\xF1o 1500 y tienes la suerte de poder estar
       aqu\xED"
+    _priority: 1
     _voice: {fileID: 0}
     _nextDialogue: {fileID: 0}

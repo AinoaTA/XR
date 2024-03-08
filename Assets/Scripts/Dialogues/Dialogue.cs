@@ -16,8 +16,10 @@ namespace Dialogue
         public AudioClip Voice => _voice;
         public Dialogue NextDialogue => _nextDialogue;
 
+        public int Priority => _priority;
 
         [SerializeField] private string _sentence;
+        [SerializeField] private int _priority;
         [SerializeField] private AudioClip _voice;
         [SerializeField] private Dialogue _nextDialogue;
     }

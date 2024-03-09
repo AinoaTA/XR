@@ -32194,14 +32194,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1746951816}
     m_Modifications:
-    - target: {fileID: 4658479902708162601, guid: 3616f9103e3effc468944539605667f7, type: 3}
-      propertyPath: lengthInSec
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4658479902708162601, guid: 3616f9103e3effc468944539605667f7, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5421864030238928192, guid: 3616f9103e3effc468944539605667f7, type: 3}
       propertyPath: m_InteractionManager
       value: 
@@ -32250,6 +32242,10 @@ PrefabInstance:
       propertyPath: _attacher
       value: 
       objectReference: {fileID: 260798888}
+    - target: {fileID: 6901873001952694043, guid: 3616f9103e3effc468944539605667f7, type: 3}
+      propertyPath: _interactableSimple
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7415465165944102228, guid: 3616f9103e3effc468944539605667f7, type: 3}
       propertyPath: m_Name
       value: GreekHelmet

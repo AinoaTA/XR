@@ -62,11 +62,15 @@ namespace Interctable
 
         private void ActivateAction(BaseInteractionEventArgs e)
         {
-            Debug.Log("Traing attachment");
+            Debug.Log("Traing attachment"); 
             //_attacher = e.interactorObject.transform.getco<Common.Attacher>();
             Debug.Log("_attacher: " + _attacher);
             if (_attacher != null)
+            {
                 _attacher.Attach(transform, Vector3.zero, Vector3.zero, ResetAction);
+                var g = e.interactorObject as XRRayInteractor;
+                g.attachTransform = _attacher.ToAttach;
+            }
         }
 
         private void DeactivateAction(BaseInteractionEventArgs e)

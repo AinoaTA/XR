@@ -5,6 +5,8 @@ namespace Common
 {
     public class Attacher : MonoBehaviour
     {
+        public Transform ToAttach => _PointAttach;
+
         [SerializeField] private Transform _PointAttach;
 
         private Transform _previousParent;

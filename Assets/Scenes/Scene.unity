@@ -1212,7 +1212,7 @@ MonoBehaviour:
   m_OriginBaseGameObject: {fileID: 47143014}
   m_CameraFloorOffsetObject: {fileID: 110165205}
   m_RequestedTrackingOriginMode: 1
-  m_CameraYOffset: 1.1176
+  m_CameraYOffset: 3
 --- !u!4 &47143017
 Transform:
   m_ObjectHideFlags: 0
@@ -1222,7 +1222,7 @@ Transform:
   m_GameObject: {fileID: 47143014}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.008360525, z: -0, w: 0.9999651}
-  m_LocalPosition: {x: 13, y: 2.7, z: 14.5}
+  m_LocalPosition: {x: 12.31, y: 2.7, z: 31.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1242,8 +1242,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af6bf904e410ee8479f9093d8830d1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LocomotionProvider: {fileID: 0}
-  m_MinHeight: 1.5
+  m_LocomotionProvider: {fileID: 785340312}
+  m_MinHeight: 0.5
   m_MaxHeight: 2
 --- !u!143 &47143026
 CharacterController:
@@ -1264,7 +1264,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 3.5
+  m_Height: 3
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -5239,6 +5239,7 @@ GameObject:
   - component: {fileID: 260798887}
   - component: {fileID: 260798886}
   - component: {fileID: 260798885}
+  - component: {fileID: 260798888}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5430,6 +5431,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &260798888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260798883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8a3ed9d69d6235479e80a2cf51ea545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _PointAttach: {fileID: 260798884}
 --- !u!1001 &262669868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32180,6 +32194,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1746951816}
     m_Modifications:
+    - target: {fileID: 4658479902708162601, guid: 3616f9103e3effc468944539605667f7, type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658479902708162601, guid: 3616f9103e3effc468944539605667f7, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5421864030238928192, guid: 3616f9103e3effc468944539605667f7, type: 3}
       propertyPath: m_InteractionManager
       value: 
@@ -32224,6 +32246,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 29.283
       objectReference: {fileID: 0}
+    - target: {fileID: 6901873001952694043, guid: 3616f9103e3effc468944539605667f7, type: 3}
+      propertyPath: _attacher
+      value: 
+      objectReference: {fileID: 260798888}
     - target: {fileID: 7415465165944102228, guid: 3616f9103e3effc468944539605667f7, type: 3}
       propertyPath: m_Name
       value: GreekHelmet
@@ -36385,6 +36411,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4470733223629831028, guid: c12ff5943d8e3594a836a89d04d9356b, type: 3}
+      propertyPath: _attacher
+      value: 
+      objectReference: {fileID: 260798888}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -41903,6 +41933,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -31.349
       objectReference: {fileID: 0}
+    - target: {fileID: 7504530254928378381, guid: 11493c70a972cb34a824497ab153b4c5, type: 3}
+      propertyPath: _attacher
+      value: 
+      objectReference: {fileID: 260798888}
     - target: {fileID: 8873691146366376719, guid: 11493c70a972cb34a824497ab153b4c5, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
       value: 1

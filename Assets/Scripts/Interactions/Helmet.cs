@@ -6,30 +6,41 @@ namespace Interctable
     public class Helmet : MonoBehaviour, IInteractable
     {
         [SerializeField] private ParticleIndicator _particle;
+        [SerializeField] private XRBaseInteractable _interactableGrab; 
+        //[SerializeField] private Common.Attacher _attacher;
 
         private Vector3 _initPos;
         private Quaternion _initRot;
         private bool _canInteract; 
-        private XRBaseInteractable _interactable;
+[SerializeField]        private Common.Attacher _attacher;
+
+        private bool _grabbing;
+        private bool _setup;
 
         private void OnEnable()
         {
-            if (_interactable == null)
-                TryGetComponent(out _interactable);
+            if (_interactableGrab == null)
+                TryGetComponent(out _interactableGrab);
 
-            _interactable.selectEntered.AddListener(Interacting);
-            _interactable.selectExited.AddListener(Deselect);
+            _interactableGrab.selectEntered.AddListener(Interacting);
+            _interactableGrab.selectExited.AddListener(Deselect);
+
+            _interactableGrab.activated.AddListener(ActivateAction);
+            _interactableGrab.deactivated.AddListener(DeactivateAction);
         }
         private void OnDisable()
         {
-            _interactable.selectEntered.RemoveAllListeners();
-            _interactable.selectExited.RemoveAllListeners();
+            _interactableGrab.selectEntered.RemoveAllListeners();
+            _interactableGrab.selectExited.RemoveAllListeners();
+
+            _interactableGrab.activated.RemoveAllListeners();
+            _interactableGrab.deactivated.RemoveAllListeners();
         }
 
         private void Awake()
         {
             _initPos = transform.position;
-            _initRot = transform.rotation; 
+            _initRot = transform.rotation;
         }
 
         private void Start()
@@ -42,11 +53,27 @@ namespace Interctable
         public void Interact()
         {
             if (!_canInteract) return;
-            _canInteract = false; 
+            _canInteract = false;
+
+            Debug.Log("interacting");
 
             _particle.StopIndicator();
         }
 
+        private void ActivateAction(BaseInteractionEventArgs e)
+        {
+            Debug.Log("Traing attachment");
+            //_attacher = e.interactorObject.transform.getco<Common.Attacher>();
+            Debug.Log("_attacher: " + _attacher);
+            if (_attacher != null)
+                _attacher.Attach(transform, Vector3.zero, Vector3.zero, ResetAction);
+        }
+
+        private void DeactivateAction(BaseInteractionEventArgs e)
+        {
+            if (_attacher != null)
+                _attacher.Dettach();
+        }
         private void Interacting(BaseInteractionEventArgs e)
         {
             Interact();
@@ -58,12 +85,12 @@ namespace Interctable
         }
 
         private void ResetAction()
-        {  
+        {
             transform.SetPositionAndRotation(_initPos, _initRot);
 
             _particle.StartIndicator();
-            
+
             _canInteract = true;
-        } 
+        }
     }
 }

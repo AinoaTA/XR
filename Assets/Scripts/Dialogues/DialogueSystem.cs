@@ -11,22 +11,22 @@ namespace Dialogue
     {
         [Header("References")]
         [SerializeField] private DialogueContext _dialogueContext;
-        [SerializeField] private TalkIndicator _indicator;
-        [SerializeField] private Transform _parentButton;
-        [SerializeField] private ButtonOption _buttonOption;
+        [SerializeField] private TalkIndicator _indicator; 
 
         private Dialogue _dialogue;
         private DialogueOptions _dialogueOptions;
-        private int _indexOption;
         private AudioSource _audioSource;
-        private bool _stopped;
         private IEnumerator _routine;
+
+        private int _indexOption;
         private bool _requiresPlayerAnswer;
+        private bool _stopped;
 
         private void Awake()
         {
             TryGetComponent(out _audioSource);
         }
+
         /// <summary>
         /// Continue dialogue.
         /// </summary>
@@ -70,8 +70,7 @@ namespace Dialogue
         public void AnswerOptions(int i)
         {
             _indexOption = i;
-            _requiresPlayerAnswer = false;
-            //StartDialogue(_dialogueOptions.AllOptions[i].Dialogue);
+            _requiresPlayerAnswer = false; 
         }
 
         public void PauseDialogue()

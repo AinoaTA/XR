@@ -6,7 +6,10 @@ namespace Interctable
     public class Helmet : MonoBehaviour, IInteractable
     {
         [SerializeField] private ParticleIndicator _particle;
-        [SerializeField] private XRBaseInteractable _interactableGrab; 
+        [SerializeField] private NPC.NPCTriggerAnswer _npc;
+        [SerializeField] private bool _goodChoise;
+
+        private XRBaseInteractable _interactableGrab; 
         //[SerializeField] private Common.Attacher _attacher;
 
         private Vector3 _initPos;
@@ -56,7 +59,7 @@ namespace Interctable
             _canInteract = false;
 
             Debug.Log("interacting");
-
+            
             _particle.StopIndicator();
         }
 
@@ -70,6 +73,8 @@ namespace Interctable
                 _attacher.Attach(transform, Vector3.zero, Vector3.zero, ResetAction);
                 var g = e.interactorObject as XRRayInteractor;
                 g.attachTransform = _attacher.ToAttach;
+
+                _npc.TestHelmet(_goodChoise);
             }
         }
 

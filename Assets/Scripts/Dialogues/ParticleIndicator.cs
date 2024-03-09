@@ -1,7 +1,6 @@
 using UnityEngine;
+using Dialogue;
 
-namespace Dialogue
-{
     public class ParticleIndicator : TalkIndicator
     {
         [SerializeField] private ParticleSystem _particles;
@@ -19,4 +18,3 @@ namespace Dialogue
             _particles.Stop();
         }
     }
-}

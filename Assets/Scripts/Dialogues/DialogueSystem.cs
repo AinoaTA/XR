@@ -38,6 +38,7 @@ namespace Dialogue
         /// <param name="d"> new dialogue </param>
         public void StartDialogue(Dialogue d)
         {
+            if (d == null) return;
             //if new dialogue has lower priority or equals, it won't play (low priority = trigger dialogues)
             if (_dialogue != null)
             {

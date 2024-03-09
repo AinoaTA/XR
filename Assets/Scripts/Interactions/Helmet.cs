@@ -9,13 +9,13 @@ namespace Interctable
         [SerializeField] private NPC.NPCTriggerAnswer _npc;
         [SerializeField] private bool _goodChoise;
 
-        private XRBaseInteractable _interactableGrab; 
+        private XRBaseInteractable _interactableGrab;
         //[SerializeField] private Common.Attacher _attacher;
 
         private Vector3 _initPos;
         private Quaternion _initRot;
-        private bool _canInteract; 
-[SerializeField]        private Common.Attacher _attacher;
+        private bool _canInteract;
+        [SerializeField] private Common.Attacher _attacher;
 
         private bool _grabbing;
         private bool _setup;
@@ -59,13 +59,13 @@ namespace Interctable
             _canInteract = false;
 
             Debug.Log("interacting");
-            
+
             _particle.StopIndicator();
         }
 
         private void ActivateAction(BaseInteractionEventArgs e)
         {
-            Debug.Log("Traing attachment"); 
+            Debug.Log("Traing attachment");
             //_attacher = e.interactorObject.transform.getco<Common.Attacher>();
             Debug.Log("_attacher: " + _attacher);
             if (_attacher != null)

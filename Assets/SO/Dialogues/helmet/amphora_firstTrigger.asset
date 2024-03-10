@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: amphora_firstTrigger
   m_EditorClassIdentifier: 
   _dialogues:
+    Done: 0
+    _id: 1
     _sentence: "Hola viajero, esta \xE1nfora de aqu\xED se usaba para guardar vino
       o aceite en el siglo 8"
     _priority: 0

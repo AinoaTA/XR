@@ -48,6 +48,8 @@ namespace Dialogue
             //if new dialogue has lower priority or equals, it won't play (low priority = trigger dialogues)
             if (_dialogue != null)
             {
+                if (_dialogue.Conver.ID == d.Conver.ID) return;
+
                 if (d.Conver.Priority < _dialogue.Conver.Priority) return;
             }
 

@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: helmet_Repeat
   m_EditorClassIdentifier: 
   _dialogues:
+    Done: 0
+    _id: 5
     _sentence: "Los cascos corintios tambi\xE9n eran conocidos como \"kr\xE1nos\"."
     _priority: 0
     _voice: {fileID: 8300000, guid: 67737d328d9d11847a189c0873871fb8, type: 3}

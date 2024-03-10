@@ -18,8 +18,11 @@ namespace Dialogue
 
         public int Priority => _priority;
 
+        public int ID => _id;
+
         public bool Done;
 
+        [SerializeField] private int _id;
         [SerializeField] private string _sentence;
         [SerializeField] private int _priority;
         [SerializeField] private AudioClip _voice;

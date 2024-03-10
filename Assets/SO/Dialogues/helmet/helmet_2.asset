@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: helmet_2
   m_EditorClassIdentifier: 
   _dialogues:
+    Done: 0
+    _id: 1
     _sentence: "\xA1Ahora te ves preparado para seguir adelante!"
     _priority: 0
     _voice: {fileID: 8300000, guid: 965272d40ae635a438e1009670fab8e4, type: 3}

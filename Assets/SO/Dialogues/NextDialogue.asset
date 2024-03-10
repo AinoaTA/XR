@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: NextDialogue
   m_EditorClassIdentifier: 
   _dialogues:
+    Done: 0
+    _id: 2
     _sentence: "Estas ruinas son del a\xF1o 1500 y tienes la suerte de poder estar
       aqu\xED"
     _priority: 1

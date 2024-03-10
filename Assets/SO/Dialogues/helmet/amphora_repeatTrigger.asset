@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: amphora_repeatTrigger
   m_EditorClassIdentifier: 
   _dialogues:
+    Done: 0
+    _id: 2
     _sentence: "A las \xE1nforas que serv\xEDan para transportar mercanc\xEDa se
       les marcaba un sello antes de hornearlas."
     _priority: 0

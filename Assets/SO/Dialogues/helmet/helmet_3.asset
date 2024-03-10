@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: helmet_3
   m_EditorClassIdentifier: 
   _dialogues:
+    Done: 0
+    _id: 2
     _sentence: Vaya, prueba con otro color, ese no te favorece.
     _priority: 0
     _voice: {fileID: 8300000, guid: e3e43606cc21a99459f51bfcfbcd8f35, type: 3}

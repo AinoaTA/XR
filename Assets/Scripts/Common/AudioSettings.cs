@@ -1,15 +1,15 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 namespace Common
 {
     public class AudioSettings : MonoBehaviour
     {
+        [SerializeField] private GameObject _audioSettings;
         [SerializeField] private AudioMixer TheMixer;
-        [SerializeField] private Slider musicSlider, sfxSlider, dialogueSlider;
-        //[SerializeField] private TMP_Text musicLabel, sfxLabel, dialogueLabel;
+        [SerializeField] private Slider musicSlider, sfxSlider, dialogueSlider; 
 
         private void Start()
         {
@@ -17,21 +17,31 @@ namespace Common
             SetSFXVolume();
             SetDialoguesVolume();
         }
-        public void SetDialoguesVolume()
+
+        public void AudioSettingsMenu(InputAction.CallbackContext ctx) 
         {
-            //dialogueLabel.text = (dialogueSlider.value +20).ToString();
-            //TheMixer.SetFloat("MasterValue", 0); 
+            if (ctx.performed)
+            { 
+                EnableAudioSettings();
+            }
+        }
+
+        private void EnableAudioSettings() 
+        { 
+            _audioSettings.SetActive(!_audioSettings.activeSelf);
+        }
+
+        public void SetDialoguesVolume()
+        { 
             TheMixer.SetFloat("MusicValue", musicSlider.value);
         }
         public void SetMusicVolume()
-        {
-            //musicLabel.text = (musicSlider.value + 20 ).ToString();
+        { 
             TheMixer.SetFloat("MusicValue", musicSlider.value);
         }
 
         public void SetSFXVolume()
-        {
-            //sfxLabel.text = (sfxSlider.value +20).ToString();
+        { 
             TheMixer.SetFloat("SFXValue", (sfxSlider.value));
         }
     }

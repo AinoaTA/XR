@@ -1,6 +1,6 @@
 using UnityEngine;
-using TMPro;
-using System.Collections.Generic;
+using TMPro; 
+using System.Linq;
 
 namespace Dialogue
 {
@@ -9,38 +9,43 @@ namespace Dialogue
         [SerializeField] private GameObject _contextPanel;
         [SerializeField] private TMP_Text _text;
         [SerializeField] private Transform _contextButtons;
-        [SerializeField] private ButtonOption _buttonOptions;
-         
-        private List<ButtonOption> _buttons = new();
- 
+        [SerializeField] private ButtonOption[] _buttonOptions;
+
         public void Enabled(bool enabled)
         {
             _contextPanel.SetActive(enabled);
-            Clear();
+            //Clear();
         }
 
-        public void Write(string t)
+        /// <summary>
+        /// Writes NPC dialogue.
+        /// </summary>
+        /// <param name="t"></param>
+        public void WriteContext(string t)
         {
             _text.text = t;
         }
 
+        /// <summary>
+        /// Enable necessary buttons and set up.
+        /// </summary>
+        /// <param name="options"></param>
+        /// <param name="s"></param>
         public void WriteButton(DialogueOptions options, DialogueSystem s)
         {
             for (int i = 0; i < options.AllOptions.Length; i++)
-            {
-                ButtonOption b = Instantiate(_buttonOptions, _contextButtons);
-                b.Init(options.AllOptions[i].Sequence, i, s);
-            } 
+            { 
+                ButtonOption b = _buttonOptions[i];
+                b.gameObject.SetActive(true);
+                b.Init(options.AllOptions[i].Sequence, i, options.AllOptions[i].WasSelected, s);
+            }
         }
 
         public void Clear()
         {
             _text.ClearMesh();
 
-            for (int i = 0; i < _buttons.Count; i++)
-            {
-                Destroy(_buttons[i].gameObject);
-            } 
+            _buttonOptions.ToList().ForEach(n => n.gameObject.SetActive(false));
         }
     }
 }

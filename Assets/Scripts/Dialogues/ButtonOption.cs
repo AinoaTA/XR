@@ -1,4 +1,5 @@
 using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 namespace Dialogue
@@ -8,13 +9,22 @@ namespace Dialogue
         [SerializeField] private Color _pressedColor;
         [SerializeField] private TMP_Text _text;
 
-        private DialogueSystem _system; 
+        private Image _image;
+        private DialogueSystem _system;
         private int _index;
-        public void Init(string t, int i, DialogueSystem system)
+        private Color _reset = Color.white;
+
+        private void Awake()
+        {
+            TryGetComponent(out _image);
+        }
+
+        public void Init(string t, int i, bool pressedBefore, DialogueSystem system)
         {
             _text.text = t;
             _index = i;
-            _system = system;
+            _system = system; 
+            _image.color = pressedBefore ? _pressedColor : _reset;
         }
 
         public void Pressed()

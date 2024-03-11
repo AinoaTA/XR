@@ -14,6 +14,9 @@ namespace Dialogue
             public string Sequence => _sequence;
             public Dialogue Dialogue => _nextConver;
 
+            public bool WasSelected => _wasSelected;
+
+            [SerializeField] private bool _wasSelected;
             [SerializeField] private string _sequence;
             [SerializeField] private Dialogue _nextConver;
         }

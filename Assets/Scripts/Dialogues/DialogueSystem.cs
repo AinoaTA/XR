@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+using System.Collections; 
 using UnityEngine;
 
 namespace Dialogue
@@ -71,6 +68,7 @@ namespace Dialogue
 
         public void AnswerOptions(int i)
         {
+         
             _indexOption = i;
             _requiresPlayerAnswer = false; 
         }
@@ -92,7 +90,7 @@ namespace Dialogue
             _stopped = false;
 
             _dialogueContext.Enabled(true);
-            _dialogueContext.Write(_dialogue.Conver.Sentence);
+            _dialogueContext.WriteContext(_dialogue.Conver.Sentence);
             float time = 6;
             float t = 0;
 

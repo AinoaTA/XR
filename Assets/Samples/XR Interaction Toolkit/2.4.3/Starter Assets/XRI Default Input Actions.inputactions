@@ -2197,6 +2197,45 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "XR Settings",
+            "id": "2b5cec97-017c-42ce-8619-62eb62c799cc",
+            "actions": [
+                {
+                    "name": "AudioMenu",
+                    "type": "Button",
+                    "id": "9459098e-dfae-492e-8101-7e8897fb6e01",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5357d727-a8d6-4e8a-9e9f-fa7fdaa15529",
+                    "path": "<XRController>{LeftHand}/menu",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AudioMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0b02cb5a-624d-4778-9ceb-88169fdeac46",
+                    "path": "<OculusTouchController>{LeftHand}/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AudioMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

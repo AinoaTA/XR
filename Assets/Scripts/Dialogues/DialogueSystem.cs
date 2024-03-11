@@ -1,4 +1,4 @@
-using System.Collections; 
+using System.Collections;
 using UnityEngine;
 
 namespace Dialogue
@@ -8,7 +8,7 @@ namespace Dialogue
     {
         [Header("References")]
         [SerializeField] private DialogueContext _dialogueContext;
-        [SerializeField] private TalkIndicator _indicator; 
+        [SerializeField] private TalkIndicator _indicator;
 
         private Dialogue _dialogue;
         private DialogueOptions _dialogueOptions;
@@ -58,8 +58,8 @@ namespace Dialogue
                 _requiresPlayerAnswer = true;
 
                 _dialogueOptions = _dialogue as DialogueOptions;
-                 
-                _dialogueContext.WriteButton(_dialogueOptions, this); 
+
+                _dialogueContext.WriteButton(_dialogueOptions, this);
             }
 
             if (_routine != null) StopCoroutine(_routine);
@@ -68,9 +68,9 @@ namespace Dialogue
 
         public void AnswerOptions(int i)
         {
-         
             _indexOption = i;
-            _requiresPlayerAnswer = false; 
+            _requiresPlayerAnswer = false;
+            _dialogueContext.HideButtons(); 
         }
 
         public void PauseDialogue()
@@ -104,12 +104,13 @@ namespace Dialogue
 
             //wait if npc must wait for player question
             if (_requiresPlayerAnswer)
-            {
+            { 
                 yield return new WaitWhile(() => _requiresPlayerAnswer);
-                _dialogue = _dialogueOptions.AllOptions[_indexOption].Dialogue;
+                _dialogueOptions.AllOptions[_indexOption].WasSelected = true;
+                _dialogue = _dialogueOptions.AllOptions[_indexOption].Dialogue; 
             }
             else
-            { 
+            {
                 //do this for interrupt conversation if is necessary. Only when npc speaks and no waits for player question.
                 while (t < time)
                 {
@@ -118,7 +119,15 @@ namespace Dialogue
                 }
             }
 
-            var nextDialogue = _dialogue.Conver.NextDialogue;
+
+            Dialogue nextDialogue = null;
+
+            if (_dialogueOptions == null)
+                nextDialogue = _dialogue.Conver.NextDialogue;
+            else
+                nextDialogue = _dialogue;
+
+            _dialogueOptions = null;
             _dialogue = null;
             //check if there is next conver or close
             if (nextDialogue != null)
@@ -130,6 +139,6 @@ namespace Dialogue
                 _indicator.StopIndicator();
                 _dialogueContext.Enabled(false);
             }
-        } 
+        }
     }
 }

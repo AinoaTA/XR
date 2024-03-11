@@ -18,9 +18,7 @@ namespace Dialogue
 
         public int Priority => _priority;
 
-        public int ID => _id;
-
-        public bool Done;
+        public int ID => _id; 
 
         [SerializeField] private int _id;
         [SerializeField] private string _sentence;

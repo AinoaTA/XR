@@ -11,7 +11,7 @@ namespace Dialogue
 
         private Image _image;
         private DialogueSystem _system;
-        private int _index;
+        [SerializeField] private int _index;
         private Color _reset = Color.white;
 
         private void Awake()
@@ -23,12 +23,12 @@ namespace Dialogue
         {
             _text.text = t;
             _index = i;
-            _system = system; 
+            _system = system;
             _image.color = pressedBefore ? _pressedColor : _reset;
         }
 
         public void Pressed()
-        {
+        { 
             _system.AnswerOptions(_index);
         }
     }

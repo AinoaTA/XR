@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ef829054d5d1a5428c46fe79b678528, type: 3}
+  m_Name: Sacrificio_options
+  m_EditorClassIdentifier: 
+  _dialogues:
+    _id: 0
+    _sentence: "\xBFQu\xE9 m\xE1s quieres saber?"
+    _priority: 1
+    _voice: {fileID: 8300000, guid: c843a4379b23b4c4a98bf6f88eb5e475, type: 3}
+    _nextDialogue: {fileID: 0}
+  _options:
+  - _wasSelected: 0
+    _sequence: "Por qu\xE9 lo hac\xEDan."
+    _nextConver: {fileID: 11400000, guid: daaef0a6783bf8f47ada5eb3d180fea4, type: 2}
+  - _wasSelected: 0
+    _sequence: "Qu\xE9 ofrecian"
+    _nextConver: {fileID: 11400000, guid: 88e4e0ed9e6188a42a72be0f881c4b13, type: 2}
+  - _wasSelected: 0
+    _sequence: "Nada m\xE1s."
+    _nextConver: {fileID: 11400000, guid: b89b58fcba9319d408c4e0e5d766700f, type: 2}

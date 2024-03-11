@@ -34,11 +34,16 @@ namespace Dialogue
         public void WriteButton(DialogueOptions options, DialogueSystem s)
         {
             for (int i = 0; i < options.AllOptions.Length; i++)
-            { 
+            {
                 ButtonOption b = _buttonOptions[i];
                 b.gameObject.SetActive(true);
                 b.Init(options.AllOptions[i].Sequence, i, options.AllOptions[i].WasSelected, s);
             }
+        }
+
+        public void HideButtons() 
+        {
+            _buttonOptions.ToList().ForEach(n => n.gameObject.SetActive(false));
         }
 
         public void Clear()

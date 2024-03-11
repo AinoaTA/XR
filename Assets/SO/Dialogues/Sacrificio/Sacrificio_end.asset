@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfaa9949f0a66eb44aab6b68f86cc5e9, type: 3}
-  m_Name: Trigger-Hola
+  m_Name: Sacrificio_end
   m_EditorClassIdentifier: 
   _dialogues:
-    _sentence: Hola.
-    _priority: 0
-    _voice: {fileID: 0}
+    _id: 0
+    _sentence: Que vaya bien.
+    _priority: 3
+    _voice: {fileID: 8300000, guid: 34095e8eb4ce6d2469a019ee0f179480, type: 3}
     _nextDialogue: {fileID: 0}

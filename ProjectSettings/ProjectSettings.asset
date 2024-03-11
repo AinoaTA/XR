@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: Univrse XR
+  companyName: atabares
+  productName: Ainoa Tabares - Test XR
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -133,8 +133,11 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
-  bundleVersion: 0.1
-  preloadedAssets: []
+  bundleVersion: 1
+  preloadedAssets:
+  - {fileID: -5163796802232076254, guid: c87d4a7299f38d543abee7b06738a714, type: 2}
+  - {fileID: 11400000, guid: 6694a2fa965389847bb2bfca048baca8, type: 2}
+  - {fileID: -7026795974767772245, guid: f83219f807592ea4387b2618512c8d7d, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -154,7 +157,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.AinoaTest.UnivrseXR
+    Android: com.AinoaTest.xr
   buildNumber:
     Standalone: 0
     VisionOS: 0

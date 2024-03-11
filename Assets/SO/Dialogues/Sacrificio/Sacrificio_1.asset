@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfaa9949f0a66eb44aab6b68f86cc5e9, type: 3}
-  m_Name: NextDialogue
+  m_Name: Sacrificio_1
   m_EditorClassIdentifier: 
   _dialogues:
-    Done: 0
-    _id: 2
-    _sentence: "Estas ruinas son del a\xF1o 1500 y tienes la suerte de poder estar
-      aqu\xED"
+    _id: 0
+    _sentence: "El sacrificio constituy\xF3 la mayor parte de los rituales religiosos
+      de la Antigua Grecia."
     _priority: 1
-    _voice: {fileID: 0}
-    _nextDialogue: {fileID: 11400000, guid: 617b553561ad4c442a581f43da1da88c, type: 2}
+    _voice: {fileID: 8300000, guid: 491b19a5545fe424ab34883c0cb48793, type: 3}
+    _nextDialogue: {fileID: 11400000, guid: d787f980991674c4d93c0fc33e507d35, type: 2}

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfaa9949f0a66eb44aab6b68f86cc5e9, type: 3}
-  m_Name: StartDialogue
+  m_Name: Sacrificio_offer
   m_EditorClassIdentifier: 
   _dialogues:
-    Done: 0
-    _id: 1
-    _sentence: "Hola! Esper\xE1bamos tu visita.. D\xE9jame que te explique un poco."
-    _priority: 1
-    _voice: {fileID: 8300000, guid: fb39b28063d431b4383568e6a36d1dd6, type: 3}
-    _nextDialogue: {fileID: 11400000, guid: 8b8907f6dd575004bb8b31b0771dbe21, type: 2}
+    _id: 0
+    _sentence: "En los sacrificios cruentos ofrec\xEDan animales, en los no cruentos,
+      comida como verduras, frutas y dem\xE1s."
+    _priority: 2
+    _voice: {fileID: 8300000, guid: 3b0c16205c225324b9dad30574add375, type: 3}
+    _nextDialogue: {fileID: 11400000, guid: d787f980991674c4d93c0fc33e507d35, type: 2}

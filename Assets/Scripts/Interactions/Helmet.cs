@@ -8,6 +8,9 @@ namespace Interctable
         [SerializeField] private ParticleIndicator _particle;
         [SerializeField] private NPC.NPCTriggerAnswer _npc;
         [SerializeField] private bool _goodChoise;
+        [Header("sfx")]
+        [SerializeField] private AudioClip _grab;
+        [SerializeField] private AudioClip _wearHelmet;
 
         private XRBaseInteractable _interactableGrab; 
 
@@ -52,6 +55,10 @@ namespace Interctable
         public void Interact()
         {
             if (!_canInteract) return;
+
+            if (_grab != null)
+                ManagerSound.Instance.PlaySound(_grab, transform.position);
+
             _canInteract = false;
 
             _particle.StopIndicator();
@@ -65,6 +72,8 @@ namespace Interctable
                 var g = e.interactorObject as XRRayInteractor;
                 g.attachTransform = _attacher.ToAttach;
 
+                if(_wearHelmet!=null)
+                ManagerSound.Instance.PlaySound(_wearHelmet, transform.position);
                 _npc.TestHelmet(_goodChoise);
             }
         }

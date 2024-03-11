@@ -4914,8 +4914,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _particle: {fileID: 3569129931431940339}
-  _interactableGrab: {fileID: 5421864030238928192}
-  _interactableSimple: {fileID: 0}
+  _npc: {fileID: 0}
+  _goodChoise: 0
+  _grab: {fileID: 8300000, guid: e1c8888940242b44a969bd06d43721b5, type: 3}
+  _wearHelmet: {fileID: 8300000, guid: 6db2f38b6e1849d4fad25d4f26cd74de, type: 3}
   _attacher: {fileID: 0}
 --- !u!54 &4538191911358458077
 Rigidbody:
